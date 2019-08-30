@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Don't Waste my Fucking Time",
+  "description": "Você não tem foco? Não se preocupe, eu vou te obrigar a ter :)",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://*.instagram.com/*"
+      ],
+      "js": ["jquery-3.4.1.slim.js","content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  }
+}
