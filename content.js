@@ -1,15 +1,18 @@
-const beginWork = "8";
-const stop2Lunch = "11";
+chrome.storage.sync.get(
+  ["beginWork", "lunchTime", "backToWork", "byeTime"],
+  function(item) {
+    const { beginWork, lunchTime, backToWork, byeTime } = item;
 
-const startAgain = "13";
-const finish = "20";
+    const current = new Date();
+    const currHour = current.getHours();
 
-const current = new Date();
-const currHour = current.getHours();
-
-if (
-  (currHour >= beginWork && currHour <= stop2Lunch) ||
-  (currHour >= startAgain && currHour <= finish)
-) {
-  $("body").html("");
-}
+    if (
+      (currHour >= beginWork && currHour < lunchTime) ||
+      (currHour >= backToWork && currHour < byeTime)
+    ) {
+      $("body").html(
+        '<div class="message"><h1>"Antes sujo do que mal lavado" :)</h1></div>'
+      );
+    }
+  }
+);

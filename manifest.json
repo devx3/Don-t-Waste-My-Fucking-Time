@@ -9,11 +9,15 @@
         "https://*.youtube.com/*",
         "https://*.instagram.com/*"
       ],
-      "js": ["jquery-3.4.1.slim.js","content.js"],
-      "css": ["style.css"]
+      "js": ["./assets/js/jquery-3.4.1.slim.js","content.js"],
+      "css": ["./assets/css/style.css"]
     }
   ],
   "browser_action": {
-    "default_icon": "icon.png"
-  }
+    "default_icon": "./assets/img/icon.png"
+  },
+  "options_page": "./options/index.html",
+  "permissions": [
+    "storage"
+  ]
 }
