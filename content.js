@@ -1,10 +1,23 @@
 chrome.storage.sync.get(
   ["beginWork", "lunchTime", "backToWork", "byeTime"],
   function(item) {
-    const { beginWork, lunchTime, backToWork, byeTime } = item;
+    const arbDate = "01/01/2011 ";
+    let { beginWork, lunchTime, backToWork, byeTime } = item;
+
+    beginWork = Date.parse(arbDate + beginWork + ":00");
+    lunchTime = Date.parse(arbDate + lunchTime + ":00");
+    backToWork = Date.parse(arbDate + backToWork + ":00");
+    byeTime = Date.parse(arbDate + byeTime + ":00");
 
     const current = new Date();
-    const currHour = current.getHours();
+    const currHour = Date.parse(
+      arbDate +
+        current.getHours() +
+        ":" +
+        current.getMinutes() +
+        ":" +
+        current.getSeconds()
+    );
 
     if (
       (currHour >= beginWork && currHour < lunchTime) ||

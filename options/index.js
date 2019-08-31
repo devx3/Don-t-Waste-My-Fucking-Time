@@ -1,3 +1,6 @@
+// Apply mask
+$(".hour").mask("00:00");
+
 // Saves options to chrome.storage
 function save_options() {
   const beginWork = document.querySelector("#begin-work").value;
@@ -26,13 +29,13 @@ function save_options() {
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-  // Use default value color = 'red' and likesColor = true.
+  // use default values
   chrome.storage.sync.get(
     {
-      beginWork: "08",
-      lunchTime: "11",
-      backToWork: "13",
-      byeTime: "19"
+      beginWork: "08:00",
+      lunchTime: "11:00",
+      backToWork: "13:00",
+      byeTime: "19:00"
     },
     function(items) {
       document.getElementById("begin-work").value = items.beginWork;
