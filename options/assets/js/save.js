@@ -1,6 +1,3 @@
-// Apply mask
-$(".hour").mask("00:00");
-
 // Saves options to chrome.storage
 function save_options() {
   const beginWork = document.querySelector("#begin-work").value;

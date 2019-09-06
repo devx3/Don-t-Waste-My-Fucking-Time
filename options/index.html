@@ -2,49 +2,41 @@
 <html>
   <head>
     <title>Defina os seus horários de trabalho</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <style>
-      body {
-        padding-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container col-4">
-      <h1 class="display-6 my-2">Don't Waste My Fucking Time</h1>
-      <p class="my-2">
-        Você não tem foco? Não se preocupe, eu vou te obrigar a ter :)
-      </p>
+    <main class="container">
+      <header>
+        <h1>Don't Waste My Fucking Time</h1>
+        <p class="my-2">
+          Você não tem foco? Não se preocupe, eu vou te obrigar a ter :)
+        </p>
+      </header>
+
+      <hr />
       <div>
         <div class="form-group">
           <label for="begin-work">Início do dia</label>
-          <input type="text" class="form-control hour" id="begin-work" />
+          <input type="time" class="form-control hour" id="begin-work" />
         </div>
         <div class="form-group">
           <label for="lunch-time">Pausa para o Almoço</label>
-          <input type="text" class="form-control hour" id="lunch-time" />
+          <input type="time" class="form-control hour" id="lunch-time" />
         </div>
         <div class="form-group">
           <label for="back-to-work">Volta do almoço</label>
-          <input type="text" class="form-control hour" id="back-to-work" />
+          <input type="time" class="form-control hour" id="back-to-work" />
         </div>
         <div class="form-group">
           <label for="bye-time">É hora de dar tchau</label>
-          <input type="text" class="form-control hour" id="bye-time" />
+          <input type="time" class="form-control hour" id="bye-time" />
         </div>
         <button id="save" class="btn btn-success">Salvar</button>
         <div id="status"></div>
       </div>
-    </div>
-    <script></script>
-    <script src="../assets/js/jquery-3.4.1.slim.js"></script>
-    <script src="../assets/js/jquery.mask.min.js"></script>
-    <script src="index.js"></script>
+    </main>
+    <script src="assets/js/save.js"></script>
   </body>
 </html>
